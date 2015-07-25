@@ -1,0 +1,52 @@
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active">Service Test</li>
+  </ol>
+
+  <div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+
+      <h1>Service Test</h1>
+
+      <h2>Asynchronously Retrieving Locations</h2>
+      <alert-box class="alert" alert-obj="alertLocations"></alert-box>
+      <!--
+      <ul>
+        <li ng-repeat="location in locations">{{location}}</li>
+      </ul>
+      -->
+
+      <h2>Asynchronously Retrieving Fields from Courthouse</h2>
+      <alert-box class="alert" alert-obj="alertFields"></alert-box>
+      <!--
+      <ul>
+        <li ng-repeat="field in fields">{{field}}</li>
+      </ul>
+      -->
+
+      <h2>Asynchronously Retrieving Data from Courthouse</h2>
+      <alert-box class="alert" alert-obj="alertRead"></alert-box>
+      <div class="btn-group" ng-show="stats">
+        <label class="btn btn-primary" ng-change="updateChart()" ng-model="showPower" btn-radio="'false'">None</label>
+        <label class="btn btn-primary" ng-change="updateChart()" ng-model="showPower" btn-radio="'true'">Include Power</label>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-12" ng-show="!chartLoaded">
+          <div>loading...</div>
+        </div>
+
+        <div class="col-md-12">
+          <div google-chart chart="chart" ng-class="{'visibility-hidden': !chartLoaded}" on-ready="chartReady()" style="height:600px; width:100%;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

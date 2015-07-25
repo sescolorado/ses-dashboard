@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="SES Dashboard" version="2.6.1">
+  <partials/>
+  <file path="routes.php" generated-path="routes.html" hash="42b175ab3d3862a9d9fdb5516f350f01" package="ses-dashboard">
+    <docblock line="0">
+      <description>Routes for the SES Dashboad Application</description>
+      <long-description>&lt;p&gt;Links the PHP functions with the location path.&lt;/p&gt;</long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <source>eJytkk1PG0EMhs+dX+HbhqjN3kNEQQkSVFGLWLXXymS9uyOGmenYSwgf/x3PhkCL1JYDK600sl8/fu2Z2efYRVOOxwbGcB56IYYmJJCOoDquYIHcXQSs4ShGZ1coNniVZvUsHiytv+RBe3ZyBk3vVznPsLbSDWEXtiUQUbrJrIwHT8WH2EunfY6qBVShkTUmggWxbT0sl3OVlEZtmftP7/aZ+9+HeBr2fRtoixPSQayuoMuHTehhhR4StZaFEqBzEJphN+ll26rAF2sTxZxKwYBwkYhuaQKVvYpuA0JavsSE1+QGxvfzUwYrwF3oXa1tOAZfgwRFoB5ae005n7VzF7hXTxKAbmilzbNJrzmUDMquE/3qSY3W6sHkKxi2NJ22JKOiLD4+3/Foz9yZD4mkTx5+WFpPp1d4SaOCiX/W20eT6mJv3zzo/yeGPKV2w4JS7t4HK7o4HuKVxufBSwrOUTp8Vnypvn0t/sVqLLmay7tdxcNfmVvlf4EJfUtv4Q3C17gY+DWPsH4TTnU72iOtkiPO</source>
+  </file>
+  <file path="config/database.php" generated-path="config.database.html" hash="436606ecc0dcb02b68f821750764ed9e" package="ses-dashboard">
+    <docblock line="0">
+      <description>Contains the database configuration settings for the MySQL database.</description>
+      <long-description>&lt;p&gt;
+  &lt;b&gt;&lt;ses-dashboard&gt;/app/config/database.php&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Database host and port settings configured to use the linked environment variables set
+  when linking as a Docker container.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Username and password variables may need to be set to those in the ses_mysql Docker
+  container. See documentation on how to find the current password in the ses_mysql
+  container.
+&lt;/p&gt;</long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <source>eJy1V9lu20YUfba+Yt6YGIqUNEDSJq5bV6qRAHatWO5Dn4QReSlORXLYmaEUAv34njtcJTsJCkSyAFOznLucu/HilyIpRtPz85E4FzOdO6lyK1xCIpJOrqUlEeo8VpvSSKd0Liw5p/KNFbE2/txttfx0052eAIehLopL/ifExfrywpJ9EUmbrLU00eVUFsW0Bp1216DFxXTt71xM/d0DlHmrTKKtEzKPRKGN65VpdaRIOC1KHGTVUpVvsUL5ThmdZ5Q7sZNGyXVKlu/W2PuEcn8USEJaIcVch1syDMruIDP5klp/WjK5zKjWSFq71yYayMhkJXKqlVoTi+QnByNIqNzrCN+sssr+kzZSa+BetFgSuNBhyerXFOCb6D0jxQpyGSUsjWHzOh2O0Y9hjyz6VZbQyogbaeSOUrEw+m8K3XDrajkXSx27vTQk5mTVJhc3NzMcmY5GhlxpciGNkdWz0ehsej46+/fFd/sATCzmd+KaXJiIpatS+t74LOK3SkQUyzJ14z78DVksWLFXacok1qaCU4QKcsXJPATTOvb+XnxYMJB10SwFFUKv2Y3vmS/akRmLSpc+KiI4EH4Eh8AzCpt4CMEcgyKcGMV7k/Msk86nm1VZkapQuWoiPhCuM1ooQfWe5NYrEHsPWfbQxFvF7JwFfjkQP1+yG9+9u/79YfZhNbu5Wi7Hp2FrXvuxT1zUlhyu4Pj9AxlzCvo6l7CDbUGhiitkt4JDGnqGNa3RxoLTFNnE9/bKJgzUlBAQjFXTxsTgkmdDIh46QCTddiLuYhwqjWXzOk0YKpN5dSAUjGoEDja56rBunadStTbSVEP6Gg08gYHP5+BUvD3my56MK64kJL9BD4pmWXiHezLQPJACvhCyh3qXjwV9lsiPOhnbhsDe9SI67CKVjnMKEkGCsj5fy4L7CZJ6XXU1UEE28jZvAgRBkcktlESuprrw3cQnZJNo3qyr45jgbB4ARjrn1mR0uUnaguErWyxDlSqnqNankWXLJqITANQuMgp1pHdHIY1TYZlK08vVMWOEiVYh1SUqTWEawtZfyeAO9ACYBZQafk0b6DmwbBh8AzJ8ALZFXjQfjsKzADGpHA0PnGG1VjfAKY7c5sy43mrU9VdWq/nH+9VqEkwnk24omBZGR6WXPDm4WhiK1ecW1S8+H3f6eK3PmjT5oj4HqcRbPFkENQK2NuQwNjwLbv/CdLNa3N0/rF6/fvlm9TBbrK7m8/vg+bEVtYXot92k0wCXzZDQH2nNaJp1s3EXfabyk1zeXr/62JwIE4nIdq2lpYt/bHd0mvokCLqdVZmrUEe0CtUjPx046oi5YvNVR/HN+sixn3gn1aFM/dITrAYIsA09csPxTu+HTsuh6UeWP0E+oi9MKJOduuUaNeKpuHgUs9bsvhmzfOb/2979esp8o7X7mvXfjHDP4ykawK3aNJP+PRXaKqdNJR54nD1FG3hIUBQdo4stUYFnI8MtF3DurlzwslYfWxdsXwllakhGlTClb8VNtz1sDhjO69aqeKSqpyisj8We/MwUIcNNxoWwHRF86z8UCTdEym691DzAm0foSmhWoWLipYHFN4N2//7TF84ep2nc/e8TkXdP0Lbr4Sdp3LUIfOFCXcAJFo4P0X1jaTE284uQjHY8FEegtHqxk2mJRua41XgCZWo1A6G47xTGYLxvGfgfTY1fj3zrzjAuRZ5vjMLCVQU4TYdolXWUNZ0b1GFQu1rMBHriLWUh2htFk67rciOFwg5jgK24i0dqA4mbBM0/7+lqq0Jg2MCDRsfVKC0h0vjlGBbQ2C8P57JBBTksE69+eDt5ib9XbW5j0uh237x++9MT1eNlW6rbtGcVn78f/Qf0h2aX</source>
+  </file>
+  <file path="config/testing/database.php" generated-path="config.testing.database.html" hash="04cedef2f9dfc9c42d51656eec018d8c" package="ses-dashboard">
+    <docblock line="0">
+      <description>Contains the testing database configuration settings for the MySQL database.</description>
+      <long-description>&lt;p&gt;
+  &lt;b&gt;&lt;ses-dashboard&gt;/app/config/testing/database.php&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  Database host and port settings configured to use the linked environment variables set
+  when linking as a Docker container.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Username and password variables may need to be set to those in the ses_mysql Docker
+  container. See documentation on how to find the current password in the ses_mysql
+  container.
+&lt;/p&gt;</long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <source>eJy1V11v2zYUfY5/Bd/UBK7drljbtVm2zF7RAUnrxenDngxaoizOlKiSlF0B+/E7l6I+7KQtBsxOAMsiee+599wvXv5SZuVoenExYhdspgvHZWGZywRzwjpZbFjCHV9zK1isi1RuKsOd1AWzwtGyZak2fv9tvfzzpts9gTwSeVle0Rdjl+urSyvs04TbbK25Sa6mvCynjdBpUDbtjgPV5XTtz15OvYwDafMWVKatY7xIWKmN60G1WEXCnGYVNhJEJYst3ohiJ40uclE4tuNG8rUSls42sveZKPxWsp5bxtlcx1thSCi5R5jJ12B9ssIUPBcNIm7tXptkoCPnNStEA2otSCU9ORghmCw8Rvholdf2swpaG8G9arYUgiU6rgh+QwX+M70nSamEXpISV8aQeR2GY+nHYo8s+pVXQGXYDTd8JxRbGP23iN1w6Xo5Z0uduj03gs2FlZuC3dzMsGU6GhnhKlMwbgyvn4xGUMWmF/7rn6f/26eRxxbzj+ydcHHGlq5W4jRagq7fapaIlFfKjfvEMMLihWV7qRTR2hgPlhE8yCbHixjc69QzsHi/CLKsS2YK/DC9Jt++JRLFTpgxq3XlQyWBV+FcEAuRRmIRDzHoJLmIsSDIe5nyMOfOp6OVealkLF09Ye8FJJDAmCME9oJvPYzUO8ySwyYDC4k7+o78esR+viL3vnnz7vf72fvV7OZ6uRyfmM55498+xVGVCviHIv0Dcuuk/HbeIvfbUsQyrVEQJHwV+BuWwwDLgnSFBKRze2mzICsUHgQBFkwbN4NzniuOmOlkIlW3E/YxxabK2GBqh4ek5byoD1SDco34wiKVK0LYOU7JteGmfpTfgMYzHPmKEJ2c2IeE2tOTSdVJ8O/wh0JclZ4OTxUaE9LHF9fgvJ6TMRNfONKryei2z5DvvZZOfKm4o5SEUlAkbZv0VUmdCsVhXXfVVQIBkr8IcYTAyfkWUJHwSpe+T/mUPkjV1srr4wCi2jCQnOiCup/R1SZrK5CvmSmPpZJOig5b0GurkAQZZDROMxKFqXdQyY2TcaW46VXrNIiJMy1j0VQ+pWApIt2fyuEgNBtYCUGNhrXYAO3A0EeDdUCVD9hhWwkhe3YWIYalE8MNZ3jbQI+wiyI97Bk3SwG6P7Jazf+4W60m0XQy6caQaWl0UnnNk4OjpRGp/NJK9S/Pxx2eFrgH3yTXABUbfAbwDjLxYA/NOFHzjD0b4TDAPIlu/8K8tVp8vLtfvXjx7OXqfrZYXc/nd9H50fHezMYFGAG6IWwVBq9jlVUYZAZnvrKznTDCzuxD8el1fV1tkx8f2BFnHAnkWq9VLn39YItWyudd1G1ZVYWMdSJWsXygu2OhpaFdOh8fR0e5OaLhYXA0WxqCe5/TitIxV/7VI5ETIZo3bWD0jjte6R3VhczZwCUDj3wlwBDhcSZy3sGt1qhS34q9Li+s2X03L2jPf7e9+/WY+UZr9y3rv5tFQypP1pdu5Sbcae5Eqa102tTsngb2k3an+wzF2ZEathWixLPh8ZaaCo0EVHXzFphtmogvx1wZwZOamcrPD/2IcNi2cBVp5gFJs2IzG+L9mO2FnwQTVBGTUzVup5t2ajlUDK8k0m697iLCVSt2FfDVqNy4JRGIcLMYXPzYgwLeCwwDR//71OzeCeDvZo/TDhyNLvzDwbqEfyxoiTEypNziwkCXQp7s6DqQgPP66Y6rCu3WUTf0DHNldZCFzrOTuADg+mlAELov3Rb9yJFjCEx8TOASwFxdgnQ1FFhbJ/J+4gC9GEKvFzOG/n0r8hh9WCSTbkigpg/YDhOMrWn6SOQGSjcZ5pbiMT6prkSGjD1ox1TPVAXdxr9OYY0Y+9fDaXNQgw4LzfMfXk2e4e95Wx0wJ3WrL1+8+umR+vMs1IxRWzgI4vnb0b+F1Zy9</source>
+  </file>
+  <file path="start/artisan.php" generated-path="start.artisan.html" hash="69dc43694a4ab1fc30248f90a385d6ed" package="ses-dashboard">
+    <docblock line="0">
+      <description>sss</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+    </docblock>
+    <source>eJytkcGKAjEMhu99itxcB9S7K8giHva6ip4zbXbapdMOTZxB8OE3g4P6AJZCCeT/voRutp3vzKqqDFTAzPqsjNbmtnjbMTf4oSawUIGjJ/gqEhgT7HLbYnL8Xpfa9mg9YI8hYh2fPnv3QXthgZqgTEORgyGIB9HZbE6cNcNZOeJRIOjlF5rkMWsxRnJLONMsxgcJqKdyfYgmyJPakCjKWmIeOTTOmX+nlnsm139kVZlYMGnjUjcav2RaYr1G5z4SDbBPVJrrQVB2h9N32+Ui80/zD/VfhZU=</source>
+  </file>
+  <file path="commands/EnergyStatCSVImport.php" generated-path="commands.EnergyStatCSVImport.html" hash="00240ba709c43887d65452f974e751db" package="ses-dashboard">
+    <docblock line="0">
+      <description>Command for importing energy stats into a MySQL database from a CSV file</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="17" package="ses-dashboard">
+      <extends/>
+      <name>EnergyStatCSVImportColumn</name>
+      <full_name>\EnergyStatCSVImportColumn</full_name>
+      <docblock line="17">
+        <description>Helper class for storing import column information</description>
+        <long-description></long-description>
+        <tag name="author" line="17" description="ASD Software Design LLC"/>
+        <tag name="package" line="17" description="ses-dashboard"/>
+      </docblock>
+      <constant namespace="" line="19" package="ses-dashboard">
+        <name>UNKNOWN</name>
+        <full_name>\EnergyStatCSVImportColumn::UNKNOWN</full_name>
+        <value>0</value>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="" line="20" package="ses-dashboard">
+        <name>DATETIME</name>
+        <full_name>\EnergyStatCSVImportColumn::DATETIME</full_name>
+        <value>1</value>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="" line="21" package="ses-dashboard">
+        <name>STRING</name>
+        <full_name>\EnergyStatCSVImportColumn::STRING</full_name>
+        <value>2</value>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="" line="22" package="ses-dashboard">
+        <name>DOUBLE</name>
+        <full_name>\EnergyStatCSVImportColumn::DOUBLE</full_name>
+        <value>3</value>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="" line="23" package="ses-dashboard">
+        <name>INT</name>
+        <full_name>\EnergyStatCSVImportColumn::INT</full_name>
+        <value>4</value>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property static="false" visibility="public" namespace="" line="30" package="ses-dashboard">
+        <name>$name</name>
+        <full_name>\EnergyStatCSVImportColumn::name</full_name>
+        <default></default>
+        <docblock line="30">
+          <description>Column name</description>
+          <long-description></long-description>
+          <tag name="var" line="30" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="" line="37" package="ses-dashboard">
+        <name>$valid</name>
+        <full_name>\EnergyStatCSVImportColumn::valid</full_name>
+        <default></default>
+        <docblock line="37">
+          <description>Column name validity</description>
+          <long-description></long-description>
+          <tag name="var" line="37" description="" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="" line="44" package="ses-dashboard">
+        <name>$exists</name>
+        <full_name>\EnergyStatCSVImportColumn::exists</full_name>
+        <default>false</default>
+        <docblock line="44">
+          <description>Column exists in the MySQL database</description>
+          <long-description></long-description>
+          <tag name="var" line="44" description="" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="51" package="ses-dashboard">
+        <name>__construct</name>
+        <full_name>\EnergyStatCSVImportColumn::__construct()</full_name>
+        <docblock line="51">
+          <description>Default constructor</description>
+          <long-description></long-description>
+          <tag name="author" line="51" description="ASD Software Design LLC"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$valid</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="62" package="ses-dashboard">
+        <name>__toString</name>
+        <full_name>\EnergyStatCSVImportColumn::__toString()</full_name>
+        <docblock line="62">
+          <description>Default toString</description>
+          <long-description></long-description>
+          <tag name="return" line="62" description="" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="author" line="62" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="" line="75" package="ses-dashboard">
+        <name>predictType</name>
+        <full_name>\EnergyStatCSVImportColumn::predictType()</full_name>
+        <docblock line="75">
+          <description>Predicts the type of the value in the CSV file for use in a MySQL database</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="&lt;p&gt;complete path of the CSV file containing the column&lt;/p&gt;" type="string" variable="$file">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="75" description="&lt;p&gt;of the column in the CSV file&lt;/p&gt;" type="integer" variable="$index">
+            <type>integer</type>
+          </tag>
+          <tag name="param" line="75" description="&lt;p&gt;one of the values from the column in the CSV file specified by the index (attempt at an optimization)&lt;/p&gt;" type="mixed" variable="$item">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="75" description="column type" type="integer">
+            <type>integer</type>
+          </tag>
+          <tag name="author" line="75" description="ASD Software Design LLC"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$index</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="" line="117" package="ses-dashboard">
+      <extends>\Illuminate\Console\Command</extends>
+      <name>EnergyStatCSVImport</name>
+      <full_name>\EnergyStatCSVImport</full_name>
+      <docblock line="117">
+        <description>Command used to import CSV files into the database</description>
+        <long-description></long-description>
+        <tag name="author" line="117" description="ASD Software Design LLC"/>
+        <tag name="package" line="117" description="ses-dashboard"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="" line="124" package="ses-dashboard">
+        <name>$name</name>
+        <full_name>\EnergyStatCSVImport::name</full_name>
+        <default>'energy-stat:csv-import'</default>
+        <docblock line="124">
+          <description>The console command name.</description>
+          <long-description></long-description>
+          <tag name="var" line="124" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="" line="131" package="ses-dashboard">
+        <name>$description</name>
+        <full_name>\EnergyStatCSVImport::description</full_name>
+        <default>'Imports Engery Statistics in CSV format into the configured MySQL database.'</default>
+        <docblock line="131">
+          <description>The console command description.</description>
+          <long-description></long-description>
+          <tag name="var" line="131" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="138" package="ses-dashboard">
+        <name>__construct</name>
+        <full_name>\EnergyStatCSVImport::__construct()</full_name>
+        <docblock line="138">
+          <description>Create a new command instance.</description>
+          <long-description></long-description>
+          <tag name="return" line="138" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="149" package="ses-dashboard">
+        <name>fire</name>
+        <full_name>\EnergyStatCSVImport::fire()</full_name>
+        <docblock line="149">
+          <description>Execute the console command.</description>
+          <long-description></long-description>
+          <tag name="return" line="149" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+          <tag name="author" line="149" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="200" package="ses-dashboard">
+        <name>getArguments</name>
+        <full_name>\EnergyStatCSVImport::getArguments()</full_name>
+        <docblock line="200">
+          <description>Get the console command arguments.</description>
+          <long-description></long-description>
+          <tag name="return" line="200" description="" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="author" line="200" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="213" package="ses-dashboard">
+        <name>getOptions</name>
+        <full_name>\EnergyStatCSVImport::getOptions()</full_name>
+        <docblock line="213">
+          <description>Get the console command options.</description>
+          <long-description></long-description>
+          <tag name="return" line="213" description="" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="author" line="213" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="229" package="ses-dashboard">
+        <name>importDirectory</name>
+        <full_name>\EnergyStatCSVImport::importDirectory()</full_name>
+        <docblock line="229">
+          <description>Imports all the files in the specified directory into a MySQL database</description>
+          <long-description></long-description>
+          <tag name="param" line="229" description="&lt;p&gt;name of the table&lt;/p&gt;" type="string" variable="$table">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="229" description="&lt;p&gt;complete path of the directory containing CSV files&lt;/p&gt;" type="string" variable="$directory">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="229" description="null on success - string containing error on failure" type="null|string">
+            <type>null</type>
+            <type>string</type>
+          </tag>
+          <tag name="author" line="229" description="ASD Software Design LLC"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$table</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$directory</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="269" package="ses-dashboard">
+        <name>importFile</name>
+        <full_name>\EnergyStatCSVImport::importFile()</full_name>
+        <docblock line="269">
+          <description>Imports a single file into a MySQL database</description>
+          <long-description></long-description>
+          <tag name="param" line="269" description="&lt;p&gt;name of the table&lt;/p&gt;" type="string" variable="$table">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="269" description="&lt;p&gt;complete path of the directory containing CSV files&lt;/p&gt;" type="string" variable="$file">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="269" description="null on success - string containing error on failure" type="null|string">
+            <type>null</type>
+            <type>string</type>
+          </tag>
+          <tag name="author" line="269" description="ASD Software Design LLC"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$table</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <file path="controllers/HomeController.php" generated-path="controllers.HomeController.html" hash="b230c48023caacc8bde127287fb60429" package="ses-dashboard">
+    <docblock line="0">
+      <description>Default controller</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\BaseController</extends>
+      <name>HomeController</name>
+      <full_name>\HomeController</full_name>
+      <docblock line="13">
+        <description>Default controller</description>
+        <long-description></long-description>
+        <tag name="author" line="13" description="Laravel Project"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\BaseController" refers="\BaseController" link="/classes/BaseController.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="33" package="ses-dashboard">
+        <name>showWelcome</name>
+        <full_name>\HomeController::showWelcome()</full_name>
+        <docblock line="33">
+          <description>Default controller response</description>
+          <long-description></long-description>
+          <tag name="author" line="33" description="Laravel Project"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="20" package="ses-dashboard">
+        <name>setupLayout</name>
+        <full_name>\BaseController::setupLayout()</full_name>
+        <docblock line="20">
+          <description>Setup the layout used by the controller.</description>
+          <long-description></long-description>
+          <tag name="return" line="20" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJytUj1PwzAQneNfcUxpo0D2gERFGTowIIRAjG5ybVwcO/KdKVXpf8dOoQ0STPQ238d7z+/u6rprOlFkmYAMbnEhvWaorGFntUYXsrEwkZ4b6+BOOvmGGu6dXWHFoVSIfw1XWhLBzLY4PYwBvjOamuBG0jC9FSIpMpF8nJ8sAthBdxQBR7pT80SqF+uhlRtYK2qALXjCgV0EyhCjrMEucgiGKQOyrhUra0J3DlNtyTuMSPNgTQ3Oeka6gMdGckqwdCj5DGboEBSBNMFJ2XZ6SAIthmXUAS/CLJFhE0QRS8dYByS7B43quAkgx8kcVp44KgoV3LeV+48lD/2jDHCjtEhzSH9udEKNXT+jrkI2HV/2Q/FyIER/PTF+uyBwSJ01hF8t351/nlRfLkTS+blWFSy8qXr7BgJGY5FsRZI4ZO8MPClcl2UrX3GUNqi17QXuhNiJT56a6QA=</source>
+  </file>
+  <file path="controllers/EnergyStatController.php" generated-path="controllers.EnergyStatController.html" hash="4cbeb27cde69afc9f2a319da1139c1ad" package="ses-dashboard">
+    <docblock line="0">
+      <description>Controller for processing web service requests for energy statistics</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\BaseController</extends>
+      <name>EnergyStatController</name>
+      <full_name>\EnergyStatController</full_name>
+      <docblock line="13">
+        <description>Controller for processing web service requests for energy statistics</description>
+        <long-description></long-description>
+        <tag name="author" line="13" description="ASD Software Design LLC"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\BaseController" refers="\BaseController" link="/classes/BaseController.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="21" package="ses-dashboard">
+        <name>fields</name>
+        <full_name>\EnergyStatController::fields()</full_name>
+        <docblock line="21">
+          <description>Retrieve the energy stat fields for a location</description>
+          <long-description>$param string $location energy stat location</long-description>
+          <tag name="return" line="21" description="data array on success - null on failure" type="array|null">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="49" package="ses-dashboard">
+        <name>fieldsJSON</name>
+        <full_name>\EnergyStatController::fieldsJSON()</full_name>
+        <docblock line="49">
+          <description>Retrieve the energy stat fields for a location in JSON format.</description>
+          <long-description>$param string $location energy stat location</long-description>
+          <tag name="return" line="49" description="" type="\Response">
+            <type>\Response</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="62" package="ses-dashboard">
+        <name>locations</name>
+        <full_name>\EnergyStatController::locations()</full_name>
+        <docblock line="62">
+          <description>Retrieve the energy stat locations.</description>
+          <long-description></long-description>
+          <tag name="return" line="62" description="data array on success" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="82" package="ses-dashboard">
+        <name>locationsJSON</name>
+        <full_name>\EnergyStatController::locationsJSON()</full_name>
+        <docblock line="82">
+          <description>Retrieve the energy stat locations in JSON format.</description>
+          <long-description></long-description>
+          <tag name="return" line="82" description="" type="\Response">
+            <type>\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="93" package="ses-dashboard">
+        <name>range</name>
+        <full_name>\EnergyStatController::range()</full_name>
+        <docblock line="93">
+          <description>Retrieve the energy stats date range for a location</description>
+          <long-description>$param string $location energy stat location</long-description>
+          <tag name="return" line="93" description="date range array on success - null on failure" type="array|null">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="118" package="ses-dashboard">
+        <name>rangeJSON</name>
+        <full_name>\EnergyStatController::rangeJSON()</full_name>
+        <docblock line="118">
+          <description>Retrieve the energy stats date range or a location in JSON format</description>
+          <long-description>$param string $location energy stat location</long-description>
+          <tag name="return" line="118" description="" type="\Response">
+            <type>\Response</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="135" package="ses-dashboard">
+        <name>read</name>
+        <full_name>\EnergyStatController::read()</full_name>
+        <docblock line="135">
+          <description>Retrieve the energy stats for a location</description>
+          <long-description>$param string $location energy stat location
+$param string $timeFrom data set time to start from
+$param string $timeTo data set time to end on
+$param array $fields array of strings of requested field names</long-description>
+          <tag name="return" line="135" description="data array on success - null on failure" type="array|null">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$timeFrom</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$timeTo</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$fieldsRequested</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="190" package="ses-dashboard">
+        <name>readJSON</name>
+        <full_name>\EnergyStatController::readJSON()</full_name>
+        <docblock line="190">
+          <description>Retrieve the energy stats for a location in JSON format</description>
+          <long-description>$param string $location energy stat location</long-description>
+          <tag name="return" line="190" description="" type="\Response">
+            <type>\Response</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="20" package="ses-dashboard">
+        <name>setupLayout</name>
+        <full_name>\BaseController::setupLayout()</full_name>
+        <docblock line="20">
+          <description>Setup the layout used by the controller.</description>
+          <long-description></long-description>
+          <tag name="return" line="20" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzNWFlT20gQfsa/okm5ShKY4yEva64YcCpscVTZ3qtYyh7ksT0bWXJmJBIK+O/bc8mSLGzMEaIX4pm+pru/b3qyezAZTSpba2sVWIOjKIx5FASUwyDiMOGRT4Vg4RC+02sQlN8wnwKn3xIqYqFkaEj58BZETGImYuYLtCNNfSJJPML9RvsY2tEg/k44hWMq2DCE09MjFNmqvJNbPyBCQFNZaKOBjHv6I6ZhX8C/h0TQzPpdpbIig11BFy0ac0ZvKMQjmo0DBowGfR0egSDyMbQolCoVkN8aVCeEkzEKc3m2qhXJGUn1jM4nTuOEh0A4J7f3YRIE0Ccx0b8BlUXiy2zBBqhNXBkQFiScSs9blZVJch0wHwZJ6CtnOko39e5VVu60M/zSVQF7UI1HTGzsp0uut1NJJdkA3FUWdlUcU2u1jAnPS6XlZw4io8zYqXIqkiCW/o4P63VBA+rHrtNunjaPOtDzoyAZh92QjGkPPrcuzqDHQszwWLnoCn9Ex6S3aeRED/760mw1oReT64AatT344OQi2ZwGWVh3PkDj/NiqG+tlBmSsfhSGVCXV9Tb2h1Q20oANXUcW6BobyPFmzV+0jpstOPyncLRG+8jJprdqmmlPFzqXejw+Jf4I3DR3RNg8enCX86m0u5NEjFxjsmZFN/YzEaB9q/Iw9WRKZjR3KitmT+FW9+dyaAAWwu/ti3PQJdw0Vl4DIC0qJth01Kxvqb/lzS8jyAJASt6VpN4AYAYxOzkUpPJ7qrdLm94GV6//J7BdnJPwhgSsP82LmFCfoaH+plODj9sfsaEENhQJgmvif3VPwkkS1+vYY67jm0XHywRS7seEtoyxJSqcAr1YxhxnldPV3CplGKdYm/lskUX9HLJQYkWuiG8nmisOG+0mdBqHp80cGWirqygwZkOu4/uJbJENYoYs9IFelSy0yQxZTAOYzxVa8fnNtIAiloJ7alQhvthMj2Bm5tZ7G/gICQycakg4pMWZIX/k1xsbrLsnDA/z0qqMzCHQX2yIODs5d3sxG9M/Okc9D9EjV8zvGpw1/s7uIjpwxfw2JOJkJwYJzF4efiofrws/bTIDv2nIGfgt1kqPMh+0WvFFLTzvnv/Z17yKaMEtnxbNdGixqQuXvBX/BS95HdpbsdSrU1NBR/bnZx6N9ZyARwC5AnEktTnOkbg3R7UTzSriEw5m/GnOs8OaYcCBsSXkP80Dk/b1mAjyrhPF/nvGO2xup1LSzxGfTUfNHq9mY27Z8H4JviX9LN/lNi4dynnEhXNVSonmOH8qbMwReNIAPuXXQpIUz6q1ad4KfCuzMU1GXjbNeiEf8pt9U6mz1Gb85YmaBpa1HrGVz10NnFahIdU9lPchbyMII4RJlITIK+U0PwXZHkw4HXY5nQTEp66z5R7U3YPVy+2N32CjfuVtemtbDNnJcTK9mC2wwdzSdjpRrsQKO6XFF98C3LB3t7m9nJ286qVjN8p7TJKWW2W4t70D+HcXfMxPnKuXJ3fW14tdYQJQfzC5NXP9ZxQvq+xKTwH5AuvIipJXZTh5KJ7Xunt04jCPFTuY7MtXhhRKK5v+54UV2c1IYMXy7wkrJJ8SCwcpGdws5p4y0hREleRXegt7+5j7mI6L8vJTsBTdMBlTznxXy82isIgenXw0jshROrAO2wUIyq8UhguNFQw9lKJMA1jqqrZUVnZKhi0Ue+k9/N4DFh5hwXzF5ACCWTCDCI4gM1eRldEzFdzfW5SqdQ92Eb5PmrTOI1Aqeq7afuoolL8Xdf2x5l36g4lYuI7FluQwHdJTo0lRqYmbhW8WXyd6XnTICG8am2bB5WPLzWcvjc3OKXbELw5byvjltM5X+TXMbWbFnOhqpou1k/d4GCx8GWBkS74LHir/A2Fpqa0=</source>
+  </file>
+  <file path="controllers/BaseController.php" generated-path="controllers.BaseController.html" hash="613a0b11640bda5316c33ca6db11f49d" package="ses-dashboard">
+    <docblock line="0">
+      <description>Base controller</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\Controller</extends>
+      <name>BaseController</name>
+      <full_name>\BaseController</full_name>
+      <docblock line="13">
+        <description>Base controller</description>
+        <long-description></long-description>
+        <tag name="author" line="13" description="Laravel Project"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="20" package="ses-dashboard">
+        <name>setupLayout</name>
+        <full_name>\BaseController::setupLayout()</full_name>
+        <docblock line="20">
+          <description>Setup the layout used by the controller.</description>
+          <long-description></long-description>
+          <tag name="return" line="20" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJydjk1rAjEQhs+ZXzGCh3Wh3bttVerVQ0HwKunuyEZjsiQTWxH/u5MI/ToWcnryPu87z/OhH6Cpa8AaX3UkbL3j4K2lICjThU7c+4ArHfSJLL4Fv6eW5auB/5ut1TEWb/mlIX0yuS7iD3QBUHlESd+aOA3IPaHVZ58YU6QO388Ffa8/5nARFkGM4PDkTZdBA2oInuUG8XbJtWy8w5hrV6WxmoC6gFJmh9XIxK1L1lZj7k18mN03J5IoEfUL4wtuDH1Mp0d9oD/Gk6SvIA+ucAO/tnE9</source>
+  </file>
+  <file path="database/migrations/2014_07_23_160156_create_mc_hr_dept_table.php" generated-path="database.migrations.2014_07_23_160156_create_mc_hr_dept_table.html" hash="f12f080a133efc8e5d9f4ab74ebafd7b" package="ses-dashboard">
+    <docblock line="0">
+      <description>Migrates the mc_hr_dept database</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="16" package="ses-dashboard">
+      <extends>\Illuminate\Database\Migrations\Migration</extends>
+      <name>CreateMcHrDeptTable</name>
+      <full_name>\CreateMcHrDeptTable</full_name>
+      <docblock line="16">
+        <description>Migrates the mc_hr_dept database</description>
+        <long-description></long-description>
+        <tag name="author" line="16" description="ASD Software Design LLC"/>
+        <tag name="package" line="16" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="23" package="ses-dashboard">
+        <name>up</name>
+        <full_name>\CreateMcHrDeptTable::up()</full_name>
+        <docblock line="23">
+          <description>Run the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="23" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="39" package="ses-dashboard">
+        <name>down</name>
+        <full_name>\CreateMcHrDeptTable::down()</full_name>
+        <docblock line="39">
+          <description>Reverse the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="39" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJy1kT9vwjAQxWf7U9xQKQGVskNLKWQoEiyFbkjIJAexlFxS/4FKiO/eC0GBVnSq6sGyzu/ePf/8+Fympey22xLaMNNboxxacClCHq9Ss0qwdJAop9bKImsq2VB5lxYGXuYRzIuN2yuDEKHVW4LpdMySrpTeIkyyzOea2HIZnS2W8zjFXC1HmcfSaHL9X5V1Gl2QvRz78h+yxpmyFsYG2W8Wv5qIfRZqnSHgp0NKLDTz4SClqBII9n7zVE9vgj5U9dPd0KDzhmBX6KQqdKUo/TrTMWw8xScrX4YtKQ5SiJpJrxefIoTB5TnBfaMPG2Rw56p03MzdcLXqemeAtNWE8ATBhKiIRgFju6XTxBNzJGfDQCdBq39TxURxoXPO5Xh/X4yDVmfgSX94DLlFiGO1H6/B4A4N/+of4CTFnn7iSUxRfoNznnuUX65I2F8=</source>
+  </file>
+  <file path="database/migrations/2014_07_21_231509_create_mc_courthouse_table.php" generated-path="database.migrations.2014_07_21_231509_create_mc_courthouse_table.html" hash="03a2ebab719a76b2971e4c99346169cd" package="ses-dashboard">
+    <docblock line="0">
+      <description>Migrates the mc_courthouse database</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="16" package="ses-dashboard">
+      <extends>\Illuminate\Database\Migrations\Migration</extends>
+      <name>CreateMcCourthouseTable</name>
+      <full_name>\CreateMcCourthouseTable</full_name>
+      <docblock line="16">
+        <description>Migrates the mc_courthouse database</description>
+        <long-description></long-description>
+        <tag name="author" line="16" description="ASD Software Design LLC"/>
+        <tag name="package" line="16" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="23" package="ses-dashboard">
+        <name>up</name>
+        <full_name>\CreateMcCourthouseTable::up()</full_name>
+        <docblock line="23">
+          <description>Run the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="23" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="39" package="ses-dashboard">
+        <name>down</name>
+        <full_name>\CreateMcCourthouseTable::down()</full_name>
+        <docblock line="39">
+          <description>Reverse the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="39" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJy1kT9vwjAQxWf7U9xQKQGVskNLKcmCBEuhG1JlnINYSs6p/0AlxHevk7QpRepU1YNl3b17/vn5/rHKKz7s9zn0Yan2Rji04HKEUr5K7Y3LtbcImXBiKywGWa2cCh8aBp5WKaz0zh2FQUjRqj3BYpEEyZDzem5eFL5UFFw36afFZiVzLMVmVnisjCI3/lXZAilN9vs45v+DKwthLSQGg+VSJp3XWmwLBHx3SJmFDgNOnLMahAX/Z08tRMd7V9eb3tSg84bgoFVWF4acVX5bKAk7T7Kx8lXc4+zEGWujGY1kgxFHP14V3XYjcRce3LgaMMwHA7hYbX0wQdorQniAaE6k01kUAmSMfbUVhbtKJGfjSGVRb3zZDDHiWpUBxIX9ZZ1EvcHEk3rzGDfKc72fL5PAA5rwAX9II9NHus4jM7q6TuPz6jP/AAx43Ss=</source>
+  </file>
+  <file path="database/migrations/2014_07_24_152207_create_mc_fleet_maintenance_table.php" generated-path="database.migrations.2014_07_24_152207_create_mc_fleet_maintenance_table.html" hash="430500ad09d63de33e2336d2f50f0279" package="ses-dashboard">
+    <docblock line="0">
+      <description>Migrates the mc_fleet_maintenance database</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="16" package="ses-dashboard">
+      <extends>\Illuminate\Database\Migrations\Migration</extends>
+      <name>CreateMcFleetMaintenanceTable</name>
+      <full_name>\CreateMcFleetMaintenanceTable</full_name>
+      <docblock line="16">
+        <description>Migrates the mc_fleet_maintenance database</description>
+        <long-description></long-description>
+        <tag name="author" line="16" description="ASD Software Design LLC"/>
+        <tag name="package" line="16" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="23" package="ses-dashboard">
+        <name>up</name>
+        <full_name>\CreateMcFleetMaintenanceTable::up()</full_name>
+        <docblock line="23">
+          <description>Run the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="23" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="39" package="ses-dashboard">
+        <name>down</name>
+        <full_name>\CreateMcFleetMaintenanceTable::down()</full_name>
+        <docblock line="39">
+          <description>Reverse the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="39" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJy1kU9rwkAQxc/ZTzGHQqLUetfWWg0FQS/V3gRZN6NZSCbp/tGC+N07MRKl6Kl0D8vu5M2b3748v5ZpKbrttoA2zPTWSIcWXIqQq9UmQ3SrXGpySJIUQiKdXEuLrK4ahtK7tDDwNo9hXmzcXhqEGK3eEkynY5Z0hfAWYZJlPtfE5sv4bLGcqxRzuRxlHkvDI/p3lTWXLshejn3xr9Qqk9bC2CA7z9R7ZTm7OC7kOkPAb74mFhomOAgRVFQBT/nwVBM18E9V/fRtaNB5Q7ArdFIVuiIo/TrTCjae1MnKl1FLBAcRBHVOvZ46wUThrSeGj01n1AQKD67iZBv2gatV1zsDpK0mhBcIJ0RFPAo51Fs6TTw7R3I2CnUStvo3VZwyLnTOhI73z8U4bHUGnvSXx4hbguBY7cfriHCHhv/5H2JKij39DioxRXknpjPBUfwAafDsmw==</source>
+  </file>
+  <file path="database/migrations/2014_07_24_152234_create_mc_workforce_table.php" generated-path="database.migrations.2014_07_24_152234_create_mc_workforce_table.html" hash="b0dda09e01a3b03a17338cb6519d3ac2" package="ses-dashboard">
+    <docblock line="0">
+      <description>Migrates the mc_workforce database</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="16" package="ses-dashboard">
+      <extends>\Illuminate\Database\Migrations\Migration</extends>
+      <name>CreateMcWorkforceTable</name>
+      <full_name>\CreateMcWorkforceTable</full_name>
+      <docblock line="16">
+        <description>Migrates the mc_workforce database</description>
+        <long-description></long-description>
+        <tag name="author" line="16" description="ASD Software Design LLC"/>
+        <tag name="package" line="16" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="23" package="ses-dashboard">
+        <name>up</name>
+        <full_name>\CreateMcWorkforceTable::up()</full_name>
+        <docblock line="23">
+          <description>Run the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="23" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="39" package="ses-dashboard">
+        <name>down</name>
+        <full_name>\CreateMcWorkforceTable::down()</full_name>
+        <docblock line="39">
+          <description>Reverse the migrations.</description>
+          <long-description></long-description>
+          <tag name="return" line="39" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJy1kU9PAjEQxc/tp5iDyS5E5A6KCHshgYtgvJCY0h3Yxt3p2j9gQvjudllcCcGTsYemmb558+vr/WOZlbzbbnNow0xtjHBowWUIhXzbafO+1kYipMKJlbAYVJVwKLzLtIGneQJzvXY7YRAStGpDMJ2Og6TLubcIkzz3haJgukxOFsu5zLAQy1HusTSKXP9XZc2jNNmfY5//C63MhbUwNhgcZ/L122ohVjkCfjqk1EIDAXvOWYXBgv2zpxqhob2r6se7oUHnDcFWq7QqdDkr/SpXEtae5NHKl3GLsz1nrA6m15NHijg6f1N023TETXJw4yq+0B764WzV9c4AaaMI4QGiCZFORlFI75pOUZhZIDkbRyqNWv2rqhArLlQRyFzYXxbjqNUZeFIfHuPQwtih2g/n0eAWTfjcP8ST6h1dBpQaXV7Ec5p84F8ANd16</source>
+  </file>
+  <file path="tests/EnergyStatCSVImportTest.php" generated-path="tests.EnergyStatCSVImportTest.html" hash="25f18b41192b328b90776da65c479169" package="ses-dashboard">
+    <docblock line="0">
+      <description>Tests for the energy-stat:csv-import command</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\DatabaseTestCase</extends>
+      <name>EnergyStatCSVImportTest</name>
+      <full_name>\EnergyStatCSVImportTest</full_name>
+      <docblock line="13">
+        <description>Tests importing CSV files into a MySQL database using the energy-stat:csv-import command</description>
+        <long-description>&lt;p&gt;Automatically removes the data in the database after &lt;b&gt;each&lt;/b&gt; test.&lt;/p&gt;</long-description>
+        <tag name="author" line="13" description="ASD Software Design LLC"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\DatabaseTestCase" refers="\DatabaseTestCase" link="/classes/DatabaseTestCase.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="20" package="ses-dashboard">
+        <name>testEnergyStatCSVImport</name>
+        <full_name>\EnergyStatCSVImportTest::testEnergyStatCSVImport()</full_name>
+        <docblock line="20">
+          <description>Tests importing a weeks of files from the Courthouse data set.</description>
+          <long-description></long-description>
+          <tag name="author" line="20" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="45" package="ses-dashboard">
+        <name>setUp</name>
+        <full_name>\DatabaseTestCase::setUp()</full_name>
+        <docblock line="45">
+          <description>Default preparation for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="55" package="ses-dashboard">
+        <name>tearDown</name>
+        <full_name>\DatabaseTestCase::tearDown()</full_name>
+        <docblock line="55">
+          <description>Default destruction for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="22" package="ses-dashboard">
+        <name>createApplication</name>
+        <full_name>\TestCase::createApplication()</full_name>
+        <docblock line="22">
+          <description>Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.</description>
+          <long-description></long-description>
+          <tag name="author" line="22" description="Laravel Project"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJytkt1u00AQhe/9FHOBZCeKE6cRqAQafuxUqpS2AgduEEo3zjixWO+G3VlCVPXdmXWS0kLVSoi9WWs0c853Zv36zXq1DnrtdgBtmKIlC6U2QCsEVGiW29iSoGFhf8RVvdaGoNB1LdSC+/3IW+FoxQPv8gxyXdJGGIQMbbVUMJmk3NIL7svvZCq1hDT/DGUlkWuKNAg43+YfJrAQJObCIjjru/4rSiGFtTBu5HJWY4SzRsuzAf4kVAsL2Z7AF1NPch0EwKfJ4c/fWQRsEL9Z0OU+Uml03bCn2hnmcizjk4FF6u5VDmJPkjdtveZeu7msCiidKqjSCohBHsgTtQ7Q/jzjpe3qcAIKNw9tIGq9ujNAq8rGI14WGhp/d0LaSDkpO3ek4tEu/innjcK6mBW3ScMOhB5s5hP36nmcJP3u88FRMkheHs+OulIvu6wTtv7VM6sMFqTN9lHj36v/w8mgdZLf7wSy98OhRcliUZiPJ+N0Cunlp4tp1G/xc+y+4fTj5Tlc3TO6Cp9C73f4/3SKooObR3hs4HjwonOL9iX5Go8a9/3UTRDcBL8AXKwo/w==</source>
+  </file>
+  <file path="tests/EnergyStatControllerTest.php" generated-path="tests.EnergyStatControllerTest.html" hash="e23827e349182495cc9950b4fdcd1d8e" package="ses-dashboard">
+    <docblock line="0">
+      <description>Tests for the energystat controller</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\DatabaseTestCase</extends>
+      <name>EnergyStatControllerTest</name>
+      <full_name>\EnergyStatControllerTest</full_name>
+      <docblock line="13">
+        <description>Tests for the energystat controller</description>
+        <long-description>&lt;p&gt;Automatically removes the data in the database after &lt;b&gt;each&lt;/b&gt; test.&lt;/p&gt;</long-description>
+        <tag name="author" line="13" description="ASD Software Design LLC"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\DatabaseTestCase" refers="\DatabaseTestCase" link="/classes/DatabaseTestCase.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="20" package="ses-dashboard">
+        <name>testEnergyStatEnergyStatController</name>
+        <full_name>\EnergyStatControllerTest::testEnergyStatEnergyStatController()</full_name>
+        <docblock line="20">
+          <description>Test pulling data from the energystat controller</description>
+          <long-description></long-description>
+          <tag name="author" line="20" description="ASD Software Design LLC"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="45" package="ses-dashboard">
+        <name>setUp</name>
+        <full_name>\DatabaseTestCase::setUp()</full_name>
+        <docblock line="45">
+          <description>Default preparation for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="55" package="ses-dashboard">
+        <name>tearDown</name>
+        <full_name>\DatabaseTestCase::tearDown()</full_name>
+        <docblock line="55">
+          <description>Default destruction for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="22" package="ses-dashboard">
+        <name>createApplication</name>
+        <full_name>\TestCase::createApplication()</full_name>
+        <docblock line="22">
+          <description>Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.</description>
+          <long-description></long-description>
+          <tag name="author" line="22" description="Laravel Project"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJztV21v2kgQ/s6vWFUnrYkw4ISQtCnctbxUldJQBU73IRe5G3sAX4zX2V2XoFP/e8c2EF5s7NQ9ne4UKwoku/PMM88zs7bf/upP/VLt6KhEjsgIpJJkzAVRUyDggZgspGKKWNxTgrsuCNwW7vyNBWqK+94Nu2TIx2rOBJAuSGfikcvLDm6plf4ZVMtlUpJehDJElM4aJMxD4FGBZ0vSZYrdMQnhPzv4Sf4ulQheEafwinkRP3Bdx5sQG/eTseCzQySjuFV4JtloWy369IM717HIOPAs5XCPKEz9VEJSMVo5ClyyDq9feKD8QJEWYUKwhVa+eFoSoALhmV+ZwOX60wI8gqXR2UI+uEQPCCVV0n3/5g3W5EHERCvr7QmEecfORKOBBOGxGdDyGiK8qhip+68yw320Zs6FTcthyCu6DzLN5jDlUiXkz4yzl44nxL6NBDfDHTU7mPk1CRL/ktM7zoRdRXVoZaVvZVPNTY3V1JF6GysEoXoPAXOlVt/dvOmIDFxs+1ZEWoKLnDU67F32OiPSGfx+NdKMMvZO/J30rwefyJeZZVo8ENhWaMQXmpHdqGBzBp7SVsnKWQHHzZOTyprbTf1Wb0fpt5hbgs2xAZH5EsNyHfCU3hbwEKCMGv3QG6FetPY0JTWXWyz0RKaSHokAtB1EdO8apI9hEJrpyMG9Vt6VMVpGNn9J7pk2WNzOwombAs8BpaVKcsXVFY6+ts6wlTZBvMam2nHEwVIdz4znlG65SitkC6Cg7mMHXFvWwuGgf1JbcJ/gFLggyXwKeB4ZLeOimCUoVB/rtrWfzHZblf9r1xj1kx/uGwOPrL7LuTAHlhX4Dtjmu69gdmEiAM+v/m4r5cG8jk+rO+6gecWgRlwx17wG/PWZzxHtE3tExBnzbPPjzOdCmfd/pLf7sk/WtzOqnBmMOCWtNqHHdaOh10904zxsobhtopV0aTZroe/xPjBDJ00+HjvWtmZ0GPi+u0jSYFnTFSjzo4cd6+EPYH9uVok1bSmUPQifB8O9SRDA7KQ5qKyFqaxu86svdNmd+mjhQywTw0Kc+OCthY1+YU2ZkKBagRrr5/Swk1lT1YkWekJwsTdeCdb18dlpxzzjxbz/uHkpM/kiYWEJXybjX7L15z8sVIjCxMUfGSL6kSjmPSxMeHTwvVmjEHagzH+H3kcI33vSb8Q5ADL6cg18E6e6fS7BQ31dGDx9LgpD55urlEQHnxub9eO958ZV8M1hP9KryIWd7kVB4DQfCsLm8yBbcQ+HNMGpLLHxJTqD/o8CN+vGbRbpM6N6+joR/ICN2ZTP6tXzs2fD5iFsnDarxnkidGp/ZPM1To+rhvFM1Fx0G8fVRiMROGff5SDfPK2GHV4gx2Yp30qlb6Xv0M32OA==</source>
+  </file>
+  <file path="tests/BaseTestCases.php" generated-path="tests.BaseTestCases.html" hash="a656b183d21b2f3219156b98bdc5fd33" package="ses-dashboard">
+    <docblock line="0">
+      <description>Various base classes containing helper functions for testing various functionality</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+      <tag name="author" line="0" description="ASD Software Design LLC"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="15" package="ses-dashboard">
+      <extends>\Illuminate\Foundation\Testing\TestCase</extends>
+      <name>TestCase</name>
+      <full_name>\TestCase</full_name>
+      <docblock line="15">
+        <description>Starts a Laravel application in testing mode</description>
+        <long-description></long-description>
+        <tag name="author" line="15" description="Laravel Project"/>
+        <tag name="package" line="15" description="ses-dashboard"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="22" package="ses-dashboard">
+        <name>createApplication</name>
+        <full_name>\TestCase::createApplication()</full_name>
+        <docblock line="22">
+          <description>Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.</description>
+          <long-description></long-description>
+          <tag name="author" line="22" description="Laravel Project"/>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="" line="40" package="ses-dashboard">
+      <extends>\TestCase</extends>
+      <name>DatabaseTestCase</name>
+      <full_name>\DatabaseTestCase</full_name>
+      <docblock line="40">
+        <description>Base test case class use with the testing database.</description>
+        <long-description>&lt;p&gt;Automatically removes the data in the database after &lt;b&gt;each&lt;/b&gt; test.&lt;/p&gt;</long-description>
+        <tag name="author" line="40" description="ASD Software Design LLC"/>
+        <tag name="package" line="40" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\TestCase" refers="\TestCase" link="/classes/TestCase.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="45" package="ses-dashboard">
+        <name>setUp</name>
+        <full_name>\DatabaseTestCase::setUp()</full_name>
+        <docblock line="45">
+          <description>Default preparation for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="55" package="ses-dashboard">
+        <name>tearDown</name>
+        <full_name>\DatabaseTestCase::tearDown()</full_name>
+        <docblock line="55">
+          <description>Default destruction for each test</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="22" package="ses-dashboard">
+        <name>createApplication</name>
+        <full_name>\TestCase::createApplication()</full_name>
+        <docblock line="22">
+          <description>Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.</description>
+          <long-description></long-description>
+          <tag name="author" line="22" description="Laravel Project"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJyVU8GO2kAMPTNf4UMlthzCnaVsKbTSShyqsu0JCTnBkKnCTDrjga4Q/17PJIRqK3ZVhESE7ef3/F7GD3VZq+FgoGAAP9BpGzzk6AmKCr0nD4U1jNpos4OSqpocbIMpWFvjYWsdMHmOxUM7fKlipflZUCPwRwxcSu8CHR6ogq/O/qSC/y5Nl3NY2i0f0RHMyeudgcViJi1DpS4El4yOPWAHhHVd6QLjPtCm47K3G3prdQROGuFJpmZRMv1mMhsPj1UV9tog0+qLDWaT8FdPDfiqaz8pQQFI3OJnADNHMnSDX91sBi6RAavKHr08E3hGWeE23VClcyfHlNuzhZwgeNpEdZj0QSG7s3bjZfFtlZCE9uqQC5HOHCgS0+mV3t171TupXu9dMJpbqfAB2AW6V/H/uPuzOWhnzZ4MS63fnrufGhxxcAYc/QpaLFyv54/f1uusP8yy+M2tZc8O66GPJmYSO5nrnZU6d/Z+ilftNDYJjOrhqLlMt7oYLJZg3twhTY7ryTSw3YuUQk77LDT29kDNgWNzSkf7nOKNW5Yoj/MJYVGOh/kkYWfjYT15kZzXktlQnLeg/wTplajMaYuhYkkF1WJaMiW+TpFOotJ5F39e2ueJv9diWaydms7YJQwNj0Zt9V51lalj7dGMRvE6d/293slK6ktLrJ5vstsIEReK/2THhG5uj+YmwWvDmxxHjkTOlelZ/QE1dnmQ</source>
+  </file>
+  <file path="tests/ExampleTest.php" generated-path="tests.ExampleTest.html" hash="b94c6bd01c6e0304ccddc2e67834f8ea" package="ses-dashboard">
+    <docblock line="0">
+      <description>An example test case to use as a template for future test cases.</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="ses-dashboard"/>
+      <tag name="author" line="0" description="Laravel Project"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="13" package="ses-dashboard">
+      <extends>\TestCase</extends>
+      <name>ExampleTest</name>
+      <full_name>\ExampleTest</full_name>
+      <docblock line="13">
+        <description>Example test case to ensure testing is working.</description>
+        <long-description></long-description>
+        <tag name="author" line="13" description="Laravel Project"/>
+        <tag name="package" line="13" description="ses-dashboard"/>
+        <tag name="inherited_from" description="\TestCase" refers="\TestCase" link="/classes/TestCase.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="20" package="ses-dashboard">
+        <name>testBasicExample</name>
+        <full_name>\ExampleTest::testBasicExample()</full_name>
+        <docblock line="20">
+          <description>A basic functional test example.</description>
+          <long-description></long-description>
+          <tag name="return" line="20" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="22" package="ses-dashboard">
+        <name>createApplication</name>
+        <full_name>\TestCase::createApplication()</full_name>
+        <docblock line="22">
+          <description>Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.</description>
+          <long-description></long-description>
+          <tag name="author" line="22" description="Laravel Project"/>
+        </docblock>
+      </method>
+    </class>
+    <source>eJyNkMFOAjEQhs/tU8yBZJeNyz6AuqKGeDHRGF6glIGt1HbttEBCeHenwCbEePDU6cz/f3+ndw9918umqiRU8OgA9+qrtwgRKYJWxJWHxIciUNzloYoIKx9glWIKV0qaMCNjpirFjgWvKqgtWngP/hN15FEjh6jZXznoaCAatwZDsPNhw+V/yNoqooE7z1jcR3RLgnx5zhEHKUXOF3lXWCgymrdwOhrvlD2/5fIBkyw6CacBeU8HW2+WudFI0aeFvbKejE+Zdkkvx1IcpBAjHdTOYoB7GMXOUN1qa9DFug34ndhUFi+zeXEDRVOMb2V2nGW8CYY4DwnLX8Y1xg+k3jvilLo19LYpx+wVR3mUP5wwkaY=</source>
+  </file>
+  <package name="global" full_name="global"/>
+  <package name="ses-dashboard" full_name="ses-dashboard"/>
+  <namespace name="global" full_name="global"/>
+  <deprecated count="0"/>
+</project>

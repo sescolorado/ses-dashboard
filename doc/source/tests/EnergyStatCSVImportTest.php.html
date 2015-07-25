@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Tests for the energy-stat:csv-import command
+ *
+ * @author ASD Software Design LLC
+ */
+
+/**
+ * Tests importing CSV files into a MySQL database using the energy-stat:csv-import command
+ *
+ * @author ASD Software Design LLC
+ */
+class EnergyStatCSVImportTest extends DatabaseTestCase {
+
+    /**
+     * Tests importing a weeks of files from the Courthouse data set.
+     *
+     * @author ASD Software Design LLC
+     */
+    public function testEnergyStatCSVImport() {
+
+        $csvImport = new EnergyStatCSVImport();
+
+        $this-&gt;assertEquals(null, $csvImport-&gt;importFile('mc_courthouse', 'test_data/mb-001.53203098_2.log.csv'));
+
+        $this-&gt;assertEquals(null, $csvImport-&gt;importDirectory('mc_courthouse', 'test_data/Courthouse'));
+
+        $results = DB::select('SELECT COUNT(1) AS COUNT FROM `mc_courthouse`');
+
+        $this-&gt;assertEquals(1, count($results));
+        $this-&gt;assertEquals(836, $results[0]-&gt;COUNT);
+    }
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Contains the database configuration settings for the MySQL database.
+ *
+ * &lt;p&gt;
+ *   &lt;b&gt;&lt;ses-dashboard&gt;/app/config/database.php&lt;/b&gt;
+ * &lt;/p&gt;
+ *
+ * &lt;p&gt;
+ *   Database host and port settings configured to use the linked environment variables set
+ *   when linking as a Docker container.
+ * &lt;/p&gt;
+ *
+ * &lt;p&gt;
+ *   Username and password variables may need to be set to those in the ses_mysql Docker
+ *   container. See documentation on how to find the current password in the ses_mysql
+ *   container.
+ * &lt;/p&gt;
+ *
+ * @author Laravel Project
+ * @author ASD Software Design LLC
+ */
+
+return array(
+
+	/*
+	|--------------------------------------------------------------------------
+	| PDO Fetch Style
+	|--------------------------------------------------------------------------
+	|
+	| By default, database results will be returned as instances of the PHP
+	| stdClass object; however, you may desire to retrieve records in an
+	| array format for simplicity. Here you can tweak the fetch style.
+	|
+	*/
+
+	'fetch' =&gt; PDO::FETCH_CLASS,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Default Database Connection Name
+	|--------------------------------------------------------------------------
+	|
+	| Here you may specify which of the database connections below you wish
+	| to use as your default connection for all database work. Of course
+	| you may use many connections at once using the Database library.
+	|
+	*/
+
+	'default' =&gt; 'mysql',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Database Connections
+	|--------------------------------------------------------------------------
+	|
+	| Here are each of the database connections setup for your application.
+	| Of course, examples of configuring each database platform that is
+	| supported by Laravel is shown below to make development simple.
+	|
+	|
+	| All database work in Laravel is done through the PHP PDO facilities
+	| so make sure you have the driver for your particular database of
+	| choice installed on your machine before you begin development.
+	|
+	*/
+
+	'connections' =&gt; array(
+
+        /*
+		'sqlite' =&gt; array(
+			'driver'   =&gt; 'sqlite',
+			'database' =&gt; __DIR__.'/../database/production.sqlite',
+			'prefix'   =&gt; '',
+		),
+        */
+
+		'mysql' =&gt; array(
+			'driver'    =&gt; 'mysql',
+			'host'      =&gt; getenv('MYSQL_PORT_3306_TCP_ADDR'),
+			'database'  =&gt; 'ses_dashboard',
+			'username'  =&gt; 'ses',
+			'password'  =&gt; 'OdxeuQaSMF1I',
+			'charset'   =&gt; 'utf8',
+			'collation' =&gt; 'utf8_unicode_ci',
+			'prefix'    =&gt; '',
+		),
+
+        /*
+		'pgsql' =&gt; array(
+			'driver'   =&gt; 'pgsql',
+			'host'     =&gt; 'localhost',
+			'database' =&gt; 'forge',
+			'username' =&gt; 'forge',
+			'password' =&gt; '',
+			'charset'  =&gt; 'utf8',
+			'prefix'   =&gt; '',
+			'schema'   =&gt; 'public',
+		),
+        */
+
+        /*
+		'sqlsrv' =&gt; array(
+			'driver'   =&gt; 'sqlsrv',
+			'host'     =&gt; 'localhost',
+			'database' =&gt; 'database',
+			'username' =&gt; 'root',
+			'password' =&gt; '',
+			'prefix'   =&gt; '',
+		),
+        */
+	),
+
+	/*
+	|--------------------------------------------------------------------------
+	| Migration Repository Table
+	|--------------------------------------------------------------------------
+	|
+	| This table keeps track of all the migrations that have already run for
+	| your application. Using this information, we can determine which of
+	| the migrations on disk haven't actually been run in the database.
+	|
+	*/
+
+	'migrations' =&gt; 'migrations',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Redis Databases
+	|--------------------------------------------------------------------------
+	|
+	| Redis is an open source, fast, and advanced key-value store that also
+	| provides a richer set of commands than a typical key-value systems
+	| such as APC or Memcached. Laravel makes it easy to dig right in.
+	|
+	*/
+
+    /*
+	'redis' =&gt; array(
+
+		'cluster' =&gt; false,
+
+		'default' =&gt; array(
+			'host'     =&gt; '127.0.0.1',
+			'port'     =&gt; 6379,
+			'database' =&gt; 0,
+		),
+
+	),
+    */
+
+);
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active">All Locations</li>
+  </ol>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">All Locations</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <alert-box class="alert" alert-obj="locationsAlert"></alert-box>
+    </div>
+  </div>
+
+  <div class="row" ng-if="locationLoaded">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <tr ng-repeat="location in locations" ng-click="go.url('/location/' + location.locationID)" style="cursor: pointer">
+          <td>{{location.name}} &raquo;</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

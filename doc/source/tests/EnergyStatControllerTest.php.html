@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Tests for the energystat controller
+ *
+ * @author ASD Software Design LLC
+ */
+
+/**
+ * Tests for the energystat controller
+ *
+ * @author ASD Software Design LLC
+ */
+class EnergyStatControllerTest extends DatabaseTestCase {
+
+    /**
+     * Test pulling data from the energystat controller
+     *
+     * @author ASD Software Design LLC
+     */
+    public function testEnergyStatEnergyStatController()
+    {
+
+        $output = array();
+        $return_var = 0;
+        exec('mysql -u ' . DB::connection()-&gt;getConfig('username')
+            . ' -p&quot;' . DB::connection()-&gt;getConfig('password') . '&quot;'
+            . ' -h ' . DB::connection()-&gt;getConfig('host')
+            . ' ' . DB::connection()-&gt;getConfig('database')
+            . ' &lt; test_data/dump/ses_dashboard.sql', $output, $return_var);
+        $this-&gt;assertEquals(0, $return_var);
+
+        $results = DB::select('SELECT COUNT(1) AS COUNT FROM `mc_courthouse`');
+        $this-&gt;assertEquals(1, count($results));
+        $this-&gt;assertEquals(12633, $results[0]-&gt;COUNT);
+
+        $crawler = $this-&gt;client-&gt;request('GET', '/energystat/locations');
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isOk());
+
+        $response = json_decode($this-&gt;client-&gt;getResponse()-&gt;getContent());
+        $this-&gt;assertNotNull($response);
+
+        $this-&gt;assertEquals(4, count($response));
+        $this-&gt;assertTrue(in_array('mc_courthouse', $response));
+
+        $crawler = $this-&gt;client-&gt;request('GET', '/energystat/fields/' . '\'drop tables where 1=1;');
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isNotFound());
+
+        $crawler = $this-&gt;client-&gt;request('GET', '/energystat/fields/' . 'mc_courthouse');
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isOk());
+
+        $response = json_decode($this-&gt;client-&gt;getResponse()-&gt;getContent());
+        $this-&gt;assertNotNull($response);
+
+        $this-&gt;assertEquals(103, count($response));
+        $this-&gt;assertTrue(in_array('1st_Floor_Occupied_Ave_Degrees_F', $response));
+        $this-&gt;assertTrue(in_array('Return_boiler_Degrees_F', $response));
+        $this-&gt;assertTrue(in_array('Total_Real_Power_Max_Demand_Import_kW', $response));
+
+        $request = array('timeTo' =&gt; '2014-03-18', 'fields' =&gt; array('1st_Floor_Occupied_Degrees_F', 'Basement_office_Degrees_F', 'Supply_boiler_Degrees_F', 'Total_Net_Instantaneous_Real_Power_kW'));
+        $crawler = $this-&gt;client-&gt;request('POST', '/energystat/read/' . 'mc_courthouse', $request, array(), array('Content-Type' =&gt; 'application/json;charset=utf-8'));
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isClientError());
+
+        $request = array('timeFrom' =&gt; '2014-03-11', 'fields' =&gt; array('1st_Floor_Occupied_Degrees_F', 'Basement_office_Degrees_F', 'Supply_boiler_Degrees_F', 'Total_Net_Instantaneous_Real_Power_kW'));
+        $crawler = $this-&gt;client-&gt;request('POST', '/energystat/read/' . 'mc_courthouse', $request, array(), array('Content-Type' =&gt; 'application/json;charset=utf-8'));
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isClientError());
+
+        $request = array('timeFrom' =&gt; '2014-03-11', 'timeTo' =&gt; '2014-03-18');
+        $crawler = $this-&gt;client-&gt;request('POST', '/energystat/read/' . 'mc_courthouse', $request, array(), array('Content-Type' =&gt; 'application/json;charset=utf-8'));
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isClientError());
+
+        $request = array('timeFrom' =&gt; '2014-03-11', 'timeTo' =&gt; '2014-03-18', 'fields' =&gt; array('1st_Floor_Occupied_Degrees_F', 'Basement_office_Degrees_F', 'Supply_boiler_Degrees_F', 'Total_Net_Instantaneous_Real_Power_kW'));
+        $crawler = $this-&gt;client-&gt;request('POST', '/energystat/read/' . 'mc_courthouse', $request, array(), array('Content-Type' =&gt; 'application/json;charset=utf-8'));
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isOk());
+
+        $response = json_decode($this-&gt;client-&gt;getResponse()-&gt;getContent(), true);
+        $this-&gt;assertNotNull($response);
+
+        $this-&gt;assertTrue(array_key_exists('errors', $response));
+        $this-&gt;assertTrue(array_key_exists('data', $response));
+
+        $this-&gt;assertTrue(array_key_exists('1st_Floor_Occupied_Degrees_F', $response['data']));
+        $this-&gt;assertTrue(array_key_exists('Basement_office_Degrees_F', $response['data']));
+        $this-&gt;assertTrue(array_key_exists('Supply_boiler_Degrees_F', $response['data']));
+        $this-&gt;assertTrue(array_key_exists('Total_Net_Instantaneous_Real_Power_kW', $response['data']));
+
+        $this-&gt;assertEquals(602, count($response['data']['1st_Floor_Occupied_Degrees_F']));
+        $this-&gt;assertEquals(602, count($response['data']['Basement_office_Degrees_F']));
+        $this-&gt;assertEquals(602, count($response['data']['Supply_boiler_Degrees_F']));
+        $this-&gt;assertEquals(602, count($response['data']['Total_Net_Instantaneous_Real_Power_kW']));
+
+        $this-&gt;assertEquals(null, $response['data']['1st_Floor_Occupied_Degrees_F'][0]);
+        $this-&gt;assertEquals(null, $response['data']['1st_Floor_Occupied_Degrees_F'][601]);
+
+        $this-&gt;assertEquals(71.59, $response['data']['Basement_office_Degrees_F'][0]);
+        $this-&gt;assertEquals(70.87, $response['data']['Basement_office_Degrees_F'][601]);
+
+        $this-&gt;assertEquals(156.18, $response['data']['Supply_boiler_Degrees_F'][0]);
+        $this-&gt;assertEquals(152.11, $response['data']['Supply_boiler_Degrees_F'][601]);
+
+        $this-&gt;assertEquals(142.44, $response['data']['Total_Net_Instantaneous_Real_Power_kW'][0]);
+        $this-&gt;assertEquals(165.02, $response['data']['Total_Net_Instantaneous_Real_Power_kW'][601]);
+
+    }
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Default controller
+ *
+ * @author Laravel Project
+ */
+
+/**
+ * Default controller
+ *
+ * @author Laravel Project
+ */
+class HomeController extends BaseController {
+
+	/*
+	|--------------------------------------------------------------------------
+	| Default Home Controller
+	|--------------------------------------------------------------------------
+	|
+	| You may wish to use controllers instead of, or in addition to, Closure
+	| based routes. That's great! Here is an example controller method to
+	| get you started. To route to this controller, just add the route:
+	|
+	|	Route::get('/', 'HomeController@showWelcome');
+	|
+	*/
+
+    /**
+     * Default controller response
+     *
+     * @author Laravel Project
+     */
+	public function showWelcome()
+	{
+		return View::make('hello');
+	}
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

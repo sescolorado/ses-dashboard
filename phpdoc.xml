@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <parser>
+    <target>doc_parser</target>
+  </parser>
+  <transformer>
+    <target>doc</target>
+  </transformer>
+  <files>
+    <file>app/routes.php</file>
+    <file>app/config/database.php</file>
+    <file>app/config/testing/database.php</file>
+    <file>app/start/artisan.php</file>
+    <directory>app/commands</directory>
+    <directory>app/controllers</directory>
+    <directory>app/database/migrations</directory>
+    <directory>app/tests</directory>
+  </files>
+  <transformations>
+    <template name="new-black"/>
+  </transformations>
+</phpdoc>

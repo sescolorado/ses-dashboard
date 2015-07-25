@@ -1,0 +1,206 @@
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active" ng-bind="location.label">Loading...</li>
+  </ol>
+
+  <div class="row" ng-show="location.label">
+    <div class="col-md-12">
+      <h1 class="page-header" ng-bind="location.label"></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <alert-box class="alert" alert-obj="locationAlert"></alert-box>
+      <div class="alert alert-warning" ng-show="location.warnings && location.warnings.length > 0">
+        <p ng-repeat="warning in location.warnings">{{warning}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-if="location.loaded">
+    <div class="col-md-12" >
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <button class="btn btn-xs btn-default" ng-click="expandedDateRanges = !expandedDateRanges"><i class="glyphicon" ng-class="{'glyphicon-minus': expandedDateRanges, 'glyphicon-plus': !expandedDateRanges}"></i></button>
+            Date Ranges
+          </h3>
+        </div>
+        <div class="panel-body" collapse="!expandedDateRanges">
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                  <h3 class="panel-title pull-left" style="padding-top: 2px;">Base</h3>
+                  <div class="btn-group pull-right">
+                    <!-- This is here so the size of the panel heading looks right -->
+                    <label class="btn btn-xs btn-default" style="visibility: hidden">On</label>
+                    <label class="btn btn-xs btn-default" style="visibility: hidden">Off</label>
+                  </div>
+                </div>
+                <div class="panel-body">
+
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <label for="timeFrom">Start:</label>
+                        <p class="input-group">
+                          <input type="text"
+                                 id="timeFrom"
+                                 class="form-control"
+                                 ng-model="datepickers.timeFrom.date"
+                                 ng-change="datepickers.onTimeFromChanged()"
+                                 datepicker-popup="MMMM-dd-yyyy"
+                                 is-open="datepickers.timeFrom.opened"
+                                 min-date="datepickers.timeFrom.dateMin"
+                                 max-date="datepickers.timeFrom.dateMax"
+                                 datepicker-options="datepickers.options"
+                                 close-text="Close" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="datepickers.opened('timeFrom', $event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="timeTo">End:</label>
+                      <p class="input-group">
+                        <input type="text"
+                               id="timeTo"
+                               class="form-control"
+                               ng-model="datepickers.timeTo.date"
+                               ng-change="datepickers.onTimeToChanged()"
+                               datepicker-popup="MMMM-dd-yyyy"
+                               is-open="datepickers.timeTo.opened"
+                               min-date="datepickers.timeTo.dateMin"
+                               max-date="datepickers.timeTo.dateMax"
+                               datepicker-options="datepickers.options"
+                               close-text="Close" />
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="datepickers.opened('timeTo', $event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+
+              <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                  <h3 class="panel-title pull-left" style="padding-top: 2px;">Comparison</h3>
+                  <div class="btn-group pull-right">
+                    <label class="btn btn-xs"
+                           ng-class="{'btn-danger': !datepickers.timeCompareFrom.enabled, 'btn-default': datepickers.timeCompareFrom.enabled}"
+                           ng-change="chart.onUpdate()"
+                           ng-model="datepickers.timeCompareFrom.enabled"
+                           btn-radio="false">Off</label>
+                    <label class="btn btn-xs"
+                           ng-class="{'btn-success': datepickers.timeCompareFrom.enabled, 'btn-default': !datepickers.timeCompareFrom.enabled}"
+                           ng-change="chart.onUpdate()"
+                           ng-model="datepickers.timeCompareFrom.enabled"
+                           btn-radio="true">On</label>
+                  </div>
+                </div>
+                <div class="panel-body">
+
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <label for="timeCompareFrom">Start:</label>
+                      <p class="input-group">
+                        <input type="text"
+                               id="timeCompareFrom"
+                               class="form-control"
+                               ng-model="datepickers.timeCompareFrom.date"
+                               ng-disabled="!datepickers.timeCompareFrom.enabled"
+                               ng-change="datepickers.onTimeCompareFromChanged()"
+                               datepicker-popup="MMMM-dd-yyyy"
+                               is-open="datepickers.timeCompareFrom.opened"
+                               min-date="datepickers.timeCompareFrom.dateMin"
+                               max-date="datepickers.timeCompareFrom.dateMax"
+                               datepicker-options="datepickers.options"
+                               close-text="Close" />
+                        <span class="input-group-btn" ng-if="datepickers.timeCompareFrom.enabled">
+                          <button type="button" class="btn btn-default" ng-click="datepickers.opened('timeCompareFrom', $event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                        <span class="input-group-addon" ng-if="!datepickers.timeCompareFrom.enabled">&nbsp;</span>
+                      </p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="timeCompareFrom">End:</label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="datepickers.timeCompareTo.date"
+                               ng-disabled="true"
+                               datepicker-popup="MMMM-dd-yyyy"
+                               is-open="false"
+                               datepicker-options="datepickers.options"
+                               close-text="Close" />
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default" >
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <button class="btn btn-xs btn-default" ng-click="expandedFields = !expandedFields"><i class="glyphicon" ng-class="{'glyphicon-minus': expandedFields, 'glyphicon-plus': !expandedFields}"></i></button>
+            Fields
+          </h3>
+        </div>
+        <div class="panel-body" collapse="!expandedFields">
+          <div class="row">
+            <div class="col-md-3" ng-repeat="fieldDisplay in location.fieldsDisplayChart">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="fieldDisplay.checked" ng-change="chart.onUpdate()" ng-disabled="!getFieldDisplayEnabled(fieldDisplay)">
+                  <span ng-bind="fieldDisplay.label"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="alert alert-info" ng-show="chart.loading">Loading...</div>
+      <div class="alert alert-warning" ng-show="chart.warnings.length > 0">
+        <p ng-repeat="warning in chart.warnings">{{warning}}</p>
+      </div>
+      <div google-chart chart="chart.displayObj" ng-class="{'visibility-hidden': chart.loading || chart.invalid}" on-ready="chart.ready()" trigger="chart.trigger" style="height:600px; width:100%;"></div>
+    </div>
+
+    <div class="col-md-6 col-md-offset-3" ng-show="!chart.loading">
+      <table class="table table-striped">
+        <tbody>
+          <tr ng-repeat="reduction in chart.reductions">
+            <td>{{reduction.label}}</td>
+            <td>{{reduction.value}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+composer.lock
+public/phpinfo.php
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+.idea/
+profiler/*
+test_data/ftp.mesacounty.us*
+angular-seed/node_modules

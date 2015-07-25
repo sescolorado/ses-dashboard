@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Various base classes containing helper functions for testing various functionality
+ *
+ * @author Laravel Project
+ * @author ASD Software Design LLC
+ */
+
+
+/**
+ * Starts a Laravel application in testing mode
+ *
+ * @author Laravel Project
+  */
+class TestCase extends Illuminate\Foundation\Testing\TestCase {
+
+    /**
+     * Create a Laravel application project that allows the standard Laravel libraries to be used in a test case.
+     *
+     * @author Laravel Project
+     */
+	public function createApplication()
+	{
+		$unitTesting = true;
+
+		$testEnvironment = 'testing';
+
+		return require __DIR__.'/../../bootstrap/start.php';
+	}
+
+}
+
+/**
+ * Base test case class use with the testing database.
+ *
+ * &lt;p&gt;Automatically removes the data in the database after &lt;b&gt;each&lt;/b&gt; test.&lt;/p&gt;
+ *
+ * @author ASD Software Design LLC
+ */
+class DatabaseTestCase extends TestCase {
+
+    /**
+     * Default preparation for each test
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        Artisan::call('migrate');
+    }
+
+    /**
+     * Default destruction for each test
+     */
+    public function tearDown()
+    {
+        parent::tearDown();
+
+        Artisan::call('migrate:reset');
+    }
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>
