@@ -8,3 +8,4 @@ Thumbs.db
 profiler/*
 test_data/ftp.mesacounty.us*
 angular-seed/node_modules
+**/ftp-uploads
