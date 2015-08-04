@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Importing Mesa County DHS .csv files"
+docker run -t --volumes-from ses_app -w="/var/www" --link ses_mysql:mysql --name "ses_app_cron" ses_app php artisan energy-stat:csv-import -d ftp-uploads/Department_of_Human_Resources_001EC6051AE3_001EC6051AE3 mc_hr_dept
+docker rm ses_app_cron

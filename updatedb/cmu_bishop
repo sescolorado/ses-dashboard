@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Importing Colroado Mesa University Bishop Campus .csv files"
+docker run -t --volumes-from ses_app -w="/var/www" --link ses_mysql:mysql --name "ses_app_cron" ses_app php artisan energy-stat:csv-import -d ftp-uploads/uploads/001EC6051AE7 cmu_bishop
+docker rm ses_app_cron
