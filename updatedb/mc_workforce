@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Importing Mesa County Workforce Center .csv files"
+docker run -t --volumes-from ses_app -w="/var/www" --link ses_mysql:mysql --name "ses_app_cron" ses_app php artisan energy-stat:csv-import -d ftp-uploads/Workforce_Center_001EC6051AE8 mc_workforce
+docker rm ses_app_cron
