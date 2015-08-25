@@ -63,13 +63,13 @@
                     <!-- EDIT DROPDOWNS HERE -->
                     <ul class="dropdown-menu" role="menu" aria-labelledby="locationsDrop">
                         <li role="presentation">
-                            <a role="menuitem" tabindex="-1" href="#/location/mc_courthouse">
-                                Mesa County Courthouse
+                            <a role="menuitem" tabindex="-1" href="#/location/cmu_bishop">
+                                CMU Bishop Health Services Building
                             </a>
                         </li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="#/location/mc_hr_dept">
-                                Mesa County Human Resources Department
+                                Mesa County Department of Human Resources
                             </a>
                         </li>
                         <li role="presentation">
