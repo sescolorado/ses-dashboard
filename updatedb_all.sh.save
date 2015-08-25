@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# First check if the ses_app_cron docker container is running. If so, then remove it
+
+CONTAINER=ses_app_cron
+
+RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER 2> /dev/null)
+
+if [ $? -eq 1 ]; then
+  echo "UNKNOWN - $CONTAINER does not exist."
+  fi
+
+if [ "$RUNNING" == "false" ]; then
+  echo "CRITICAL - $CONTAINER is not running."
+  exit 2
+fi
+
+GHOST=$(docker inspect --format="{{ .State.Ghost }}" $CONTAINER)
+
+if [ "$GHOST" == "true" ]; then
+  echo "WARNING - $CONTAINER has been ghosted."
+  exit 1
+fi
+
+echo $RUNNING
+
+# run all the update scripts in the updatedb folder
+run-parts /www/ses-dashboard/updatedb/

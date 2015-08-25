@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'CreateCmuBishopTable' => $baseDir . '/app/database/migrations/2015_08_18_223829_create_cmu_bishop_table.php',
     'CreateMcCourthouseTable' => $baseDir . '/app/database/migrations/2014_07_21_231509_create_mc_courthouse_table.php',
     'CreateMcFleetMaintenanceTable' => $baseDir . '/app/database/migrations/2014_07_24_152207_create_mc_fleet_maintenance_table.php',
     'CreateMcHrDeptTable' => $baseDir . '/app/database/migrations/2014_07_23_160156_create_mc_hr_dept_table.php',
