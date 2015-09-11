@@ -10,3 +10,5 @@ test_data/ftp.mesacounty.us*
 angular-seed/node_modules
 **/ftp-uploads
 **/ftp-uploads-old
+**/tmp
+**/vendor/autoload.php
